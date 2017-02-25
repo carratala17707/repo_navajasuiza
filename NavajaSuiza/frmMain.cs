@@ -27,8 +27,22 @@ namespace NavajaSuiza
         {
             Aplicación_1.frmAplicacion1 oFormulario = new Aplicación_1.frmAplicacion1();
             oFormulario.ShowDialog();
-
-            
          }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Aplicación_2.frmAplicacion2 oFormulario = new Aplicación_2.frmAplicacion2();
+            oFormulario.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

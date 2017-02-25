@@ -22,9 +22,6 @@ namespace NavajaSuiza.Aplicación_1
             InitializeComponent();
         }
 
-
-
-
         /// <summary>
         /// evento que lanza un método de la clase aplicación1
         /// 

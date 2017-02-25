@@ -24,7 +24,6 @@ namespace NavajaSuiza.Aplicación_1
             //sin uso
         }
 
-
         private int myVar;
         /// <summary>
         /// propiedad de la clase Aplicacion1
