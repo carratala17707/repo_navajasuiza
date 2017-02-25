@@ -17,7 +17,6 @@ namespace NavajaSuiza
             InitializeComponent();
         }
 
-
         /// <summary>
         /// llama a una aplicación
         /// </summary>
@@ -37,7 +36,8 @@ namespace NavajaSuiza
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Aplicación_3.frmAplicacion3 oFormulario = new Aplicación_3.frmAplicacion3();
+            oFormulario.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)

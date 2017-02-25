@@ -17,20 +17,20 @@ namespace NavajaSuiza.Aplicación_2
             InitializeComponent();
         }
 
-        bool Validar(int num)
+        bool Validar(int numero)
         {
             bool valido;
 
             valido = false;
 
-            if (num >= 1 && num <= 100)
+            if (numero >= 1 && numero <= 100)
             {
                 valido = true;
             }
             return valido;
         }
 
-        string SerieMultiplos(int num)
+        string SerieMultiplos(int numero)
         {
             string texto;
             int i;
@@ -38,7 +38,7 @@ namespace NavajaSuiza.Aplicación_2
             texto = "";
             i = 1;
 
-            for (i = 1; i <= num; i++)
+            for (i = 1; i <= numero; i++)
             {
                 if (i % 3 == 0 || i % 5 == 0)
                 {
@@ -50,14 +50,14 @@ namespace NavajaSuiza.Aplicación_2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int num;
+            int numero;
             string texto;
             bool valido;
 
-            num = int.Parse(textBox1.Text);
+            numero = int.Parse(textBox1.Text);
             valido = true;
 
-            valido = Validar(num);
+            valido = Validar(numero);
 
             if (valido == false)
             {
@@ -65,7 +65,7 @@ namespace NavajaSuiza.Aplicación_2
             }
             else
             {
-                texto = SerieMultiplos(num);
+                texto = SerieMultiplos(numero);
                 MessageBox.Show(texto);
             }
         }
