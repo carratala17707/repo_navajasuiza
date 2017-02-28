@@ -8,29 +8,59 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// Namespace de la aplicación1.
+/// </summary>
 namespace NavajaSuiza.Aplicación_1
 {
     public partial class frmAplicacion1 : Form
     {
         /// <summary>
-        /// crea una variable de tipo aplicacion1 y la instancia para uso posterior
+        /// Constructor de la clase frmAplicacion1.
+        /// <remarks>----</remarks>
         /// </summary>
-        Aplicacion1 oAplicacion1=new Aplicacion1();
-
         public frmAplicacion1()
         {
             InitializeComponent();
         }
 
         /// <summary>
-        /// evento que lanza un método de la clase aplicación1
-        /// 
+        /// Función que mediante la introducción de numeroBase y númeroExponente permite
+        /// calcular potencias.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="numeroBase">Numero introducido que será la base.</param>
+        /// <param name="numeroExponente">Numero introducido que será el exponente.</param>
+        /// <remarks>----</remarks>
+        /// <returns>el resultado de la potencia.</returns>
+        int CalcularPotencia(int numeroBase, int numeroExponente)
+        {
+            int resultadoPotencia, i;
+
+            resultadoPotencia = 1;
+
+            for (i = 1; i <= numeroExponente; i++)
+            {
+                resultadoPotencia = resultadoPotencia * numeroBase;
+            }
+            return resultadoPotencia;
+        }
+
+        /// <summary>
+        /// Evento que permite la introducción de un número que actúa de base
+        /// y otro como exponente y se muestra el resultado. 
+        /// </summary>
+        /// <param name="sender">Lanza el botón del evento button1.</param>
+        /// <param name="e">Sin uso.</param>
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(oAplicacion1.Metodo());
+            int numeroBase, numeroExponente, resultadoPotencia;
+
+            numeroBase = int.Parse(textBox1.Text);
+            numeroExponente = int.Parse(textBox2.Text);
+
+            resultadoPotencia = CalcularPotencia(numeroBase, numeroExponente);
+
+            MessageBox.Show("El resultado es: " + resultadoPotencia);
         }
     }
 }

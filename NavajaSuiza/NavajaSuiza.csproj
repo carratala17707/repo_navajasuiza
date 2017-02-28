@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aplicación 1\Aplicacion1.cs" />
     <Compile Include="Aplicación 1\frmAplicacion1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Aplicación 3\frmAplicacion3.resx">
       <DependentUpon>frmAplicacion3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aplicación 3\InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Aplicación 4\frmAplicacion4.resx">
       <DependentUpon>frmAplicacion4.cs</DependentUpon>

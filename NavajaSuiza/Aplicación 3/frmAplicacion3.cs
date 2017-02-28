@@ -8,14 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// Namespace de la aplicación3
+/// </summary>
 namespace NavajaSuiza.Aplicación_3
 {
     public partial class frmAplicacion3 : Form
     {
-        private static string InputBox(string texto)
+        /// <summary>
+        /// Función que muestra un mensaje en un cuadro de diálogo, 
+        /// espera a que el usuario escriba un texto o haga clic en un botón 
+        /// y devuelve una cadena con el contenido del cuadro de texto.
+        /// </summary>
+        /// <remarks>----</remarks>
+        /// <param name="cadenaTexto">Cualquier caracter o cadena que el usuario
+        /// introduzca</param>
+        /// <returns>Cadena con el contenido del cuadro de texto.</returns>
+        private static string InputBox(string cadenaTexto)
         {
             InputBoxDialog ib = new InputBoxDialog();
-            ib.FormPrompt = texto;
+            ib.FormPrompt = cadenaTexto;
             ib.DefaultValue = "";
             ib.ShowDialog();
             string s = ib.InputResponse;
@@ -23,64 +35,100 @@ namespace NavajaSuiza.Aplicación_3
             return s;
         }
 
+        /// <summary>
+        /// Constructor de la clase frmAplicacion3.
+        /// <remarks>----</remarks>
+        /// </summary>
         public frmAplicacion3()
         {
             InitializeComponent();
         }
 
-        const int kTAM = 10;
-        int[] vector = new int[kTAM];
+        /// <summary>
+        /// Se inicializa la constante kTamanyo (tamaño del vector)
+        /// y el vector.
+        /// <remarks>----</remarks>
+        /// </summary>
+        const int kTamanyo = 10;
+        int[] vectorNumeros = new int[kTamanyo];
 
-        void LeerVector(int[] vector)
+        /// <summary>
+        /// Función que permite leer un vector de enteros.
+        /// </summary>
+        /// <remarks>Permitirá introducir números
+        /// hasta que se llegue al tamaño total del vector.</remarks>
+        /// <param name="vectorNumeros">Vector creado.</param>
+        void LeerVector(int[] vectorNumeros)
         {
-            for (int i = 0; i < kTAM; i++)
+            for (int i = 0; i < kTamanyo; i++)
             {
-                vector[i] = int.Parse(InputBox("Introduce el elemento: " + i));
+                vectorNumeros[i] = int.Parse(InputBox("Introduce el elemento: " + i));
             }
         }
 
-        int VectorRepetido(int[] vector)
+        /// <summary>
+        /// Función que permite intercambiar los números introducidos que
+        /// estén repetidos por -1 y contar la cantidad de números modificados.
+        /// </summary>
+        /// <remarks>----</remarks>
+        /// <param name="vectorNumeros">Vector leído.</param>
+        /// <returns>Contador de números modificados.</returns>
+        int VectorRepetido(int[] vectorNumeros)
         {
-            int contador = 0;
+            int contadorRepeticiones = 0;
 
-            for (int i = 0; i < kTAM; i++)
+            for (int i = 0; i < kTamanyo; i++)
             {
-                if (vector[i] != -1)
+                if (vectorNumeros[i] != -1)
                 {
-                    for (int j = i + 1; j < vector.Length; j++)
+                    for (int j = i + 1; j < vectorNumeros.Length; j++)
                     {
-                        if (vector[i] == vector[j])
+                        if (vectorNumeros[i] == vectorNumeros[j])
                         {
-                            vector[j] = -1;
-                            contador++;
+                            vectorNumeros[j] = -1;
+                            contadorRepeticiones++;
                         }
                     }
                 }
             }
-            return contador;
+            return contadorRepeticiones;
         }
 
-        string MostrarVector(int[] vector)
+        /// <summary>
+        /// Función que permite mostrar la cadena de números introducidos
+        /// con las modificaciones pertinentes.
+        /// </summary>
+        /// <remarks>----</remarks>
+        /// <param name="vectorNumeros">Vector leído y modificado.</param>
+        /// <returns>Cadena con los números del vector.</returns>
+        string MostrarVector(int[] vectorNumeros)
         {
-            string texto = "";
+            string cadenaTexto = "";
 
-            for (int i = 0; i < kTAM; i++)
+            for (int i = 0; i < kTamanyo; i++)
             {
-                texto = texto + vector[i] + ", ";
+                cadenaTexto = cadenaTexto + vectorNumeros[i] + ", ";
             }
-            return texto;
+            return cadenaTexto;
         }
 
+        /// <summary>
+        /// Evento que permite leer un vector, contar el número de valores
+        /// repetidos modificados por -1 y mostrarlo con las modificaciones.
+        /// </summary>
+        /// <param name="sender">Lanza el botón del evento button1</param>
+        /// <param name="e">Sin uso</param>
         private void button1_Click(object sender, EventArgs e)
         {
             string texto;
             int contador;
 
-            LeerVector(vector);
-            contador = VectorRepetido(vector);
-            texto = MostrarVector(vector);
+            LeerVector(vectorNumeros);
+            contador = VectorRepetido(vectorNumeros);
+            texto = MostrarVector(vectorNumeros);
 
-            MessageBox.Show(texto + " el número de valores modificados es: " + contador);
+            MessageBox.Show(texto + " el número de valores modificados es: " + 
+                contador);
         }
     }
 }
