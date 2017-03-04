@@ -20,9 +20,9 @@ namespace NavajaSuiza.Aplicación_3
         /// espera a que el usuario escriba un texto o haga clic en un botón 
         /// y devuelve una cadena con el contenido del cuadro de texto.
         /// </summary>
-        /// <remarks>----</remarks>
+        /// <remarks>Cuando se introduce un carácter no permitido, sale un mensaje de error.</remarks>
         /// <param name="cadenaTexto">Cualquier caracter o cadena que el usuario
-        /// introduzca</param>
+        /// introduzca.</param>
         /// <returns>Cadena con el contenido del cuadro de texto.</returns>
         private static string InputBox(string cadenaTexto)
         {
@@ -60,9 +60,24 @@ namespace NavajaSuiza.Aplicación_3
         /// <param name="vectorNumeros">Vector creado.</param>
         void LeerVector(int[] vectorNumeros)
         {
+            int numero;
+            bool valido;
+
             for (int i = 0; i < kTamanyo; i++)
             {
-                vectorNumeros[i] = int.Parse(InputBox("Introduce el elemento: " + i));
+                do
+                {
+                    valido = int.TryParse(InputBox("Introduce el elemento: " + i), out numero);
+
+                    if (valido)
+                    {
+                        vectorNumeros[i] = numero;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Introduzca un valor válido.");
+                    }
+                } while (!valido);
             }
         }
 

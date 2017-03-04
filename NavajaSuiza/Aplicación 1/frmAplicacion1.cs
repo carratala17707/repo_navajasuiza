@@ -31,7 +31,7 @@ namespace NavajaSuiza.Aplicación_1
         /// <param name="numeroBase">Numero introducido que será la base.</param>
         /// <param name="numeroExponente">Numero introducido que será el exponente.</param>
         /// <remarks>----</remarks>
-        /// <returns>el resultado de la potencia.</returns>
+        /// <returns>El resultado de la potencia.</returns>
         int CalcularPotencia(int numeroBase, int numeroExponente)
         {
             int resultadoPotencia, i;
