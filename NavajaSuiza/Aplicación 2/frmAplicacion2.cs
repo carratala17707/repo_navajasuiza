@@ -68,7 +68,7 @@ namespace NavajaSuiza.Aplicación_2
         }
 
         /// <summary>
-        ///Manejador de evento que permite introducir un número, validarlo para que
+        /// Manejador de evento que permite introducir un número, validarlo para que
         /// esté comprendido entre el 1 y el 100 y si lo está, que devuelva
         /// los múltiplos de 3 y 5 que puedan haber hasta ese número introducido.
         /// </summary>

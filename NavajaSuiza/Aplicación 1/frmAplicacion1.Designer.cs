@@ -68,11 +68,11 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(39, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(340, 40);
+            this.label2.Size = new System.Drawing.Size(336, 40);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Programa que nos indica si un número positivo \r\nintroducido es o no primo. ";
+            this.label2.Text = "Programa que nos indica si un número positivo\r\nintroducido es o no primo. ";
             // 
-            // Form1
+            // FrmAplicacion1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,7 +82,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form1";
+            this.Name = "FrmAplicacion1";
             this.Text = "Aplicación 1";
             this.ResumeLayout(false);
             this.PerformLayout();

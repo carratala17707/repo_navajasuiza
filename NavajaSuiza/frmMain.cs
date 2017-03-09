@@ -19,7 +19,7 @@ namespace NavajaSuiza
     public partial class FrmMain : Form
     {
         /// <summary>
-        /// Constructor de la clase frmMain.
+        /// Constructor de la clase FrmMain.
         /// <remarks>----</remarks>
         /// </summary>
         public FrmMain()
@@ -46,7 +46,7 @@ namespace NavajaSuiza
         /// <param name="e">Sin uso.</param>
         public void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Esta aplicación permite obtener una cadena de números múltiplos de 3 y 5.");
+            MessageBox.Show("Esta aplicación muestra una cadena con los múltiplos de 3 y 5 hasta un número introducido.");
             Aplicación_2.FrmAplicacion2 oFormulario = new Aplicación_2.FrmAplicacion2();
             oFormulario.ShowDialog();
         }

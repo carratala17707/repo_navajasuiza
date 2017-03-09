@@ -28,7 +28,7 @@ namespace NavajaSuiza.Aplicación_1
         }
 
         /// <summary>
-        /// Función que verifica si un número introducido es o no es primo.
+        /// Función que verifica si un número positivo introducido es o no es primo.
         /// </summary>
         /// <remarks>----</remarks>
         /// <param name="numIntroducido">Número que introduce el usuario.</param>
@@ -51,7 +51,7 @@ namespace NavajaSuiza.Aplicación_1
         }
 
         /// <summary>
-        /// Manejador de evento que permite introducir un número entero e 
+        /// Manejador de evento que permite introducir un número entero positivo e 
         /// indicar si es primo o no.
         /// </summary>
         /// <param name="sender">Lanza el botón del evento button1.</param>
