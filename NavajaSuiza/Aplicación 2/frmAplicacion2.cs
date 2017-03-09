@@ -13,13 +13,16 @@ using System.Windows.Forms;
 /// </summary>
 namespace NavajaSuiza.Aplicación_2
 {
-    public partial class frmAplicacion2 : Form
+    /// <summary>
+    /// Formulario que ejecuta la lógica de la aplicación 2.
+    /// </summary>
+    public partial class FrmAplicacion2 : Form
     {
         /// <summary>
-        /// Constructor de la clase frmAplicacion2.
+        /// Constructor de la clase FrmAplicacion2.
         /// <remarks>----</remarks>
         /// </summary>
-        public frmAplicacion2()
+        public FrmAplicacion2()
         {
             InitializeComponent();
         }
@@ -32,11 +35,9 @@ namespace NavajaSuiza.Aplicación_2
         /// se introduzca otro número.</remarks>
         /// <param name="numeroIntroducido">Número que introduce el usuario.</param>
         /// <returns>Si es válido o no.</returns>
-        bool ValidarNumero(int numeroIntroducido)
+        public bool ValidarNumero(int numeroIntroducido)
         {
-            bool numeroValido;
-
-            numeroValido = false;
+            bool numeroValido = false;
 
             if (numeroIntroducido >= 1 && numeroIntroducido <= 100)
             {
@@ -52,15 +53,11 @@ namespace NavajaSuiza.Aplicación_2
         /// <remarks>----</remarks>
         /// <param name="numeroIntroducido">Número que introduce el usuario.</param>
         /// <returns>Cadena con los múltiplos de 3 y 5.</returns>
-        string SerieMultiplos(int numeroIntroducido)
+        public string MostrarSerieMultiplos(int numeroIntroducido)
         {
-            string cadenaTexto;
-            int i;
+            string cadenaTexto = "";
 
-            cadenaTexto = "";
-            i = 1;
-
-            for (i = 1; i <= numeroIntroducido; i++)
+            for (int i = 1; i <= numeroIntroducido; i++)
             {
                 if (i % 3 == 0 || i % 5 == 0)
                 {
@@ -71,31 +68,38 @@ namespace NavajaSuiza.Aplicación_2
         }
 
         /// <summary>
-        /// Evento que permite introducir un número, validarlo para que
+        ///Manejador de evento que permite introducir un número, validarlo para que
         /// esté comprendido entre el 1 y el 100 y si lo está, que devuelva
         /// los múltiplos de 3 y 5 que puedan haber hasta ese número introducido.
         /// </summary>
         /// <param name="sender">Lanza el botón del evento button1.</param>
         /// <param name="e">Sin uso.</param>
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
+            string cadenaTexto = "";
+            bool numeroValido = true;
+            bool elementoValido = true;
             int numeroIntroducido;
-            string cadenaTexto;
-            bool numeroValido;
 
-            numeroIntroducido = int.Parse(textBox1.Text);
-            numeroValido = true;
+            elementoValido = int.TryParse(textBox1.Text, out numeroIntroducido);
 
-            numeroValido = ValidarNumero(numeroIntroducido);
-
-            if (numeroValido == false)
+            if (elementoValido)
             {
-                MessageBox.Show("Introduzca otro número.");
+                numeroValido = ValidarNumero(numeroIntroducido);
+
+                if (numeroValido == false)
+                {
+                    MessageBox.Show("Introduzca un número entre 1 y 100.");
+                }
+                else
+                {
+                    cadenaTexto = MostrarSerieMultiplos(numeroIntroducido);
+                    MessageBox.Show(cadenaTexto);
+                }
             }
             else
             {
-                cadenaTexto = SerieMultiplos(numeroIntroducido);
-                MessageBox.Show(cadenaTexto);
+                MessageBox.Show("Introduzca un elemento válido.");
             }
         }
     }

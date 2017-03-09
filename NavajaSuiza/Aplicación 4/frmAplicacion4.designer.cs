@@ -1,6 +1,6 @@
 ﻿namespace NavajaSuiza.Aplicación_4
 {
-    partial class frmAplicacion4
+    partial class FrmAplicacion4
     {
         /// <summary>
         /// Required designer variable.

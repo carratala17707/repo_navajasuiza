@@ -4,8 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// Namespace de la aplicación general NavajaSuiza.
+/// </summary>
 namespace NavajaSuiza
 {
+    /// <summary>
+    /// Clase principal de mi programa.
+    /// </summary>
     static class Program
     {
         /// <summary>
@@ -16,7 +22,7 @@ namespace NavajaSuiza
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new FrmMain());
         }
     }
 }

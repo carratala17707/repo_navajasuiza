@@ -13,14 +13,18 @@ using System.Windows.Forms;
 /// </summary>
 namespace NavajaSuiza.Aplicación_3
 {
-    public partial class frmAplicacion3 : Form
+    /// <summary>
+    /// Formulario que ejecuta la lógica de la aplicación 3.
+    /// </summary>
+    public partial class FrmAplicacion3 : Form
     {
         /// <summary>
         /// Función que muestra un mensaje en un cuadro de diálogo, 
         /// espera a que el usuario escriba un texto o haga clic en un botón 
         /// y devuelve una cadena con el contenido del cuadro de texto.
         /// </summary>
-        /// <remarks>Cuando se introduce un carácter no permitido, sale un mensaje de error.</remarks>
+        /// <remarks>Cuando se introduce un carácter no permitido, 
+        /// sale un mensaje de error.</remarks>
         /// <param name="cadenaTexto">Cualquier caracter o cadena que el usuario
         /// introduzca.</param>
         /// <returns>Cadena con el contenido del cuadro de texto.</returns>
@@ -36,10 +40,10 @@ namespace NavajaSuiza.Aplicación_3
         }
 
         /// <summary>
-        /// Constructor de la clase frmAplicacion3.
+        /// Constructor de la clase FrmAplicacion3.
         /// <remarks>----</remarks>
         /// </summary>
-        public frmAplicacion3()
+        public FrmAplicacion3()
         {
             InitializeComponent();
         }
@@ -58,26 +62,27 @@ namespace NavajaSuiza.Aplicación_3
         /// <remarks>Permitirá introducir números
         /// hasta que se llegue al tamaño total del vector.</remarks>
         /// <param name="vectorNumeros">Vector creado.</param>
-        void LeerVector(int[] vectorNumeros)
+        public void LeerVector(int[] vectorNumeros)
         {
-            int numero;
-            bool valido;
+            int numeroIntroducido;
+            bool elementoValido = true;
 
             for (int i = 0; i < kTamanyo; i++)
             {
                 do
                 {
-                    valido = int.TryParse(InputBox("Introduce el elemento: " + i), out numero);
+                    elementoValido = int.TryParse(InputBox("Introduzca el elemento: " + i),
+                        out numeroIntroducido);
 
-                    if (valido)
+                    if (elementoValido)
                     {
-                        vectorNumeros[i] = numero;
+                        vectorNumeros[i] = numeroIntroducido;
                     }
                     else
                     {
-                        MessageBox.Show("Introduzca un valor válido.");
+                        MessageBox.Show("Introduzca un elemento válido.");
                     }
-                } while (!valido);
+                } while (!elementoValido);
             }
         }
 
@@ -88,7 +93,7 @@ namespace NavajaSuiza.Aplicación_3
         /// <remarks>----</remarks>
         /// <param name="vectorNumeros">Vector leído.</param>
         /// <returns>Contador de números modificados.</returns>
-        int VectorRepetido(int[] vectorNumeros)
+        public int ModificarRepetidos(int[] vectorNumeros)
         {
             int contadorRepeticiones = 0;
 
@@ -116,7 +121,7 @@ namespace NavajaSuiza.Aplicación_3
         /// <remarks>----</remarks>
         /// <param name="vectorNumeros">Vector leído y modificado.</param>
         /// <returns>Cadena con los números del vector.</returns>
-        string MostrarVector(int[] vectorNumeros)
+        public string MostrarVector(int[] vectorNumeros)
         {
             string cadenaTexto = "";
 
@@ -128,19 +133,16 @@ namespace NavajaSuiza.Aplicación_3
         }
 
         /// <summary>
-        /// Evento que permite leer un vector, contar el número de valores
+        /// Manejador de evento que permite leer un vector, contar el número de valores
         /// repetidos modificados por -1 y mostrarlo con las modificaciones.
         /// </summary>
         /// <param name="sender">Lanza el botón del evento button1</param>
         /// <param name="e">Sin uso</param>
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
-            string texto;
-            int contador;
-
             LeerVector(vectorNumeros);
-            contador = VectorRepetido(vectorNumeros);
-            texto = MostrarVector(vectorNumeros);
+            int contador = ModificarRepetidos(vectorNumeros);
+            string texto = MostrarVector(vectorNumeros);
 
             MessageBox.Show(texto + " el número de valores modificados es: " + 
                 contador);

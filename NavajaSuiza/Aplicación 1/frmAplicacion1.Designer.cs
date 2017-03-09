@@ -1,16 +1,16 @@
 ﻿namespace NavajaSuiza.Aplicación_1
 {
-    partial class frmAplicacion1
+    partial class FrmAplicacion1
     {
         /// <summary>
-        /// Required designer variable.
+        /// Variable del diseñador necesaria.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// Limpiar los recursos que se estén usando.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,87 +20,70 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Base:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(116, 195);
+            this.button1.Location = new System.Drawing.Point(146, 249);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 41);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Calcular";
+            this.button1.Size = new System.Drawing.Size(112, 35);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "¿Es primo?";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(131, 77);
+            this.textBox1.Location = new System.Drawing.Point(216, 149);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBox1.Size = new System.Drawing.Size(148, 26);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(39, 152);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(169, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Introduzca un número:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 138);
+            this.label2.Location = new System.Drawing.Point(39, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.Size = new System.Drawing.Size(340, 40);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Exponente:";
+            this.label2.Text = "Programa que nos indica si un número positivo \r\nintroducido es o no primo. ";
             // 
-            // textBox2
+            // Form1
             // 
-            this.textBox2.Location = new System.Drawing.Point(131, 135);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(272, 26);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Programa que permite calcular una potencia mediante la\r\n introducción de una base" +
-    " y un exponente enteros.";
-            // 
-            // frmAplicacion1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(337, 302);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(426, 402);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Name = "frmAplicacion1";
-            this.Text = "Aplicacion 1";
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "Form1";
+            this.Text = "Aplicación 1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,11 +91,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
     }
 }
+

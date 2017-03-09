@@ -13,14 +13,18 @@ using System.Windows.Forms;
 /// </summary>
 namespace NavajaSuiza.Aplicación_4
 {
-    public partial class frmAplicacion4 : Form
+    /// <summary>
+    /// Formulario que ejecuta la lógica de la aplicación 4.
+    /// </summary>
+    public partial class FrmAplicacion4 : Form
     {
         /// <summary>
         /// Función que muestra un mensaje en un cuadro de diálogo, 
         /// espera a que el usuario escriba un texto o haga clic en un botón 
         /// y devuelve una cadena con el contenido del cuadro de texto.
         /// </summary>
-        /// <remarks>Cuando se introduce un carácter no permitido, sale un mensaje de error.</remarks>
+        /// <remarks>Cuando se introduce un carácter no permitido, 
+        /// sale un mensaje de error.</remarks>
         /// <param name="cadenaTexto">Cualquier caracter o cadena que el usuario
         /// introduzca.</param>
         /// <returns>Cadena con el contenido del cuadro de texto.</returns>
@@ -36,10 +40,10 @@ namespace NavajaSuiza.Aplicación_4
         }
 
         /// <summary>
-        /// Constructor de la clase frmAplicacion4.
+        /// Constructor de la clase FrmAplicacion4.
         /// <remarks>----</remarks>
         /// </summary>
-        public frmAplicacion4()
+        public FrmAplicacion4()
         {
             InitializeComponent();
         }
@@ -59,26 +63,27 @@ namespace NavajaSuiza.Aplicación_4
         /// hasta que se llegue al tamaño total del vector.</remarks>
         /// </summary>
         /// <param name="vectorLeido">Vector creado.</param>
-        void LeerVector(int[] vectorLeido)
+        public void LeerVector(int[] vectorLeido)
         {
-            int numero;
-            bool valido;
+            int numeroIntroducido;
+            bool elementoValido = true;
 
             for (int i = 0; i < kTamanyo; i++)
             {
                 do
                 {
-                    valido = int.TryParse(InputBox("Introduce el elemento: " + i), out numero);
+                    elementoValido = int.TryParse(InputBox("Introduzca el elemento: " + i),
+                        out numeroIntroducido);
 
-                    if (valido)
+                    if (elementoValido)
                     {
-                        vectorLeido[i] = numero;
+                        vectorLeido[i] = numeroIntroducido;
                     }
                     else
                     {
-                        MessageBox.Show("Introduzca un valor válido.");
+                        MessageBox.Show("Introduzca un elemento válido.");
                     }
-                } while (!valido);
+                } while (!elementoValido);
             }
         }
 
@@ -88,7 +93,7 @@ namespace NavajaSuiza.Aplicación_4
         /// </summary>
         /// <remarks>----</remarks>
         /// <param name="vectorLeido">Vector leído.</param>
-        void VectorReves(int[] vectorLeido)
+       public void InvertirVector(int[] vectorLeido)
         {
             int j = vectorLeido.Length - 1;
 
@@ -106,7 +111,7 @@ namespace NavajaSuiza.Aplicación_4
         /// <remarks>----</remarks>
         /// <param name="vectorAlReves">Vector con las modificaciones.</param>
         /// <returns>Cadena con los números que conforman vectorAlReves.</returns>
-        string MostrarVectorReves(int[] vectorAlReves)
+        public string MostrarVectorReves(int[] vectorAlReves)
         {
             string cadenaTexto = "";
 
@@ -118,17 +123,17 @@ namespace NavajaSuiza.Aplicación_4
         }
 
         /// <summary>
-        /// Evento que permite leer un vector (vectorLeido), darle la 
+        /// Manejador de evento que permite leer un vector (vectorLeido), darle la 
         /// vuelta (vectorAlReves) y mostrarlo.
         /// </summary>
         /// <param name="sender">Lanza el botón del evento button1</param>
         /// <param name="e">Sin uso</param>
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             string cadenaTexto;
 
             LeerVector(vectorLeido);
-            VectorReves(vectorLeido);
+            InvertirVector(vectorLeido);
             cadenaTexto = MostrarVectorReves(vectorAlReves);
 
             MessageBox.Show(cadenaTexto);

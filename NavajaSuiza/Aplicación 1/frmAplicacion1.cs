@@ -13,54 +13,74 @@ using System.Windows.Forms;
 /// </summary>
 namespace NavajaSuiza.Aplicación_1
 {
-    public partial class frmAplicacion1 : Form
+    /// <summary>
+    /// Formulario que ejecuta la lógica de la aplicación 1.
+    /// </summary>
+    public partial class FrmAplicacion1 : Form
     {
         /// <summary>
-        /// Constructor de la clase frmAplicacion1.
+        /// Constructor de la clase FrmAplicacion1.
         /// <remarks>----</remarks>
         /// </summary>
-        public frmAplicacion1()
+        public FrmAplicacion1()
         {
             InitializeComponent();
         }
 
         /// <summary>
-        /// Función que mediante la introducción de numeroBase y númeroExponente permite
-        /// calcular potencias.
+        /// Función que verifica si un número introducido es o no es primo.
         /// </summary>
-        /// <param name="numeroBase">Numero introducido que será la base.</param>
-        /// <param name="numeroExponente">Numero introducido que será el exponente.</param>
         /// <remarks>----</remarks>
-        /// <returns>El resultado de la potencia.</returns>
-        int CalcularPotencia(int numeroBase, int numeroExponente)
+        /// <param name="numIntroducido">Número que introduce el usuario.</param>
+        /// <returns>Si es primo o no.</returns>
+        public bool EsPrimo(int numIntroducido)
         {
-            int resultadoPotencia, i;
+            bool esPrimo = true;
 
-            resultadoPotencia = 1;
-
-            for (i = 1; i <= numeroExponente; i++)
+            if (numIntroducido > 0)
             {
-                resultadoPotencia = resultadoPotencia * numeroBase;
+                for (int i = 2; i < numIntroducido && esPrimo; i++)
+                {
+                    if (numIntroducido % i == 0)
+                    {
+                        esPrimo = false;
+                    }
+                }
             }
-            return resultadoPotencia;
+            return esPrimo;
         }
 
         /// <summary>
-        /// Evento que permite la introducción de un número que actúa de base
-        /// y otro como exponente y se muestra el resultado. 
+        /// Manejador de evento que permite introducir un número entero e 
+        /// indicar si es primo o no.
         /// </summary>
         /// <param name="sender">Lanza el botón del evento button1.</param>
         /// <param name="e">Sin uso.</param>
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
-            int numeroBase, numeroExponente, resultadoPotencia;
+            bool elementoValido = true;
+            bool esPrimo;
+            int numeroIntroducido;
 
-            numeroBase = int.Parse(textBox1.Text);
-            numeroExponente = int.Parse(textBox2.Text);
+            elementoValido = int.TryParse(textBox1.Text, out numeroIntroducido);
 
-            resultadoPotencia = CalcularPotencia(numeroBase, numeroExponente);
+            if (elementoValido)
+            {
+                esPrimo = EsPrimo(numeroIntroducido);
 
-            MessageBox.Show("El resultado es: " + resultadoPotencia);
+                if (esPrimo)
+                {
+                    MessageBox.Show("El número es primo.");
+                }
+                else
+                {
+                    MessageBox.Show("El número no es primo.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Introduzca un elemento válido.");
+            }
         }
     }
 }
