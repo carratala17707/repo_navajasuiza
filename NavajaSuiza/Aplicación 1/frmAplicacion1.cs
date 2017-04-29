@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /// <summary>
-/// Namespace de la aplicación1.
+/// Namespace de la aplicación 1.
 /// </summary>
 namespace NavajaSuiza.Aplicación_1
 {
@@ -54,15 +54,15 @@ namespace NavajaSuiza.Aplicación_1
         /// Manejador de evento que permite introducir un número entero positivo e 
         /// indicar si es primo o no.
         /// </summary>
-        /// <param name="sender">Lanza el botón del evento button1.</param>
+        /// <param name="sender">Lanza el botón del evento botonAppPrimo.</param>
         /// <param name="e">Sin uso.</param>
-        public void button1_Click(object sender, EventArgs e)
+        public void botonAppPrimo_Click(object sender, EventArgs e)
         {
             bool elementoValido = true;
             bool esPrimo;
             int numeroIntroducido;
 
-            elementoValido = int.TryParse(textBox1.Text, out numeroIntroducido);
+            elementoValido = int.TryParse(textIntroducNumApp1.Text, out numeroIntroducido);
 
             if (elementoValido)
             {

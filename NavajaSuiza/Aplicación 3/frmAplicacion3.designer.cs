@@ -28,38 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.botonAppRepetidos = new System.Windows.Forms.Button();
+            this.etiqDescApp3 = new System.Windows.Forms.Label();
+            this.etiqIntroducNumApp3 = new System.Windows.Forms.Label();
+            this.textIntroducNumApp3 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // botonAppRepetidos
             // 
-            this.button1.Location = new System.Drawing.Point(220, 282);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 57);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Mostrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.botonAppRepetidos.Location = new System.Drawing.Point(219, 345);
+            this.botonAppRepetidos.Name = "botonAppRepetidos";
+            this.botonAppRepetidos.Size = new System.Drawing.Size(149, 57);
+            this.botonAppRepetidos.TabIndex = 0;
+            this.botonAppRepetidos.Text = "Mostrar";
+            this.botonAppRepetidos.UseVisualStyleBackColor = true;
+            this.botonAppRepetidos.Click += new System.EventHandler(this.botonAppRepetidos_Click);
             // 
-            // label1
+            // etiqDescApp3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 105);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(512, 60);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Programa que lee un vector de números enteros positivos introducidos. \r\nSustituye" +
+            this.etiqDescApp3.AutoSize = true;
+            this.etiqDescApp3.Location = new System.Drawing.Point(47, 105);
+            this.etiqDescApp3.Name = "etiqDescApp3";
+            this.etiqDescApp3.Size = new System.Drawing.Size(512, 60);
+            this.etiqDescApp3.TabIndex = 1;
+            this.etiqDescApp3.Text = "Programa que lee un vector de números enteros positivos introducidos. \r\nSustituye" +
     " cada valor repetido por el –1 y devuelve el número de valores \r\nmodificados. ";
             // 
-            // frmAplicacion3
+            // etiqIntroducNumApp3
+            // 
+            this.etiqIntroducNumApp3.AutoSize = true;
+            this.etiqIntroducNumApp3.Location = new System.Drawing.Point(75, 215);
+            this.etiqIntroducNumApp3.Name = "etiqIntroducNumApp3";
+            this.etiqIntroducNumApp3.Size = new System.Drawing.Size(177, 40);
+            this.etiqIntroducNumApp3.TabIndex = 2;
+            this.etiqIntroducNumApp3.Text = "Introduzca 10 números \r\nseparados por comas:";
+            // 
+            // textIntroducNumApp3
+            // 
+            this.textIntroducNumApp3.Location = new System.Drawing.Point(258, 229);
+            this.textIntroducNumApp3.MaxLength = 30;
+            this.textIntroducNumApp3.Name = "textIntroducNumApp3";
+            this.textIntroducNumApp3.Size = new System.Drawing.Size(216, 26);
+            this.textIntroducNumApp3.TabIndex = 3;
+            // 
+            // FrmAplicacion3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 517);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Name = "frmAplicacion3";
+            this.Controls.Add(this.textIntroducNumApp3);
+            this.Controls.Add(this.etiqIntroducNumApp3);
+            this.Controls.Add(this.etiqDescApp3);
+            this.Controls.Add(this.botonAppRepetidos);
+            this.Name = "FrmAplicacion3";
             this.Text = "Aplicación 3";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -68,8 +89,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button botonAppRepetidos;
+        private System.Windows.Forms.Label etiqDescApp3;
+        private System.Windows.Forms.Label etiqIntroducNumApp3;
+        private System.Windows.Forms.TextBox textIntroducNumApp3;
     }
 }
 

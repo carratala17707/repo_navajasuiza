@@ -65,9 +65,6 @@
     <Compile Include="Aplicación 3\FrmAplicacion3.designer.cs">
       <DependentUpon>FrmAplicacion3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Aplicación 3\InputBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Aplicación 4\FrmAplicacion4.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,9 +88,6 @@
     <EmbeddedResource Include="Aplicación 3\FrmAplicacion3.resx">
       <DependentUpon>FrmAplicacion3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Aplicación 3\InputBox.resx">
-      <DependentUpon>InputBox.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Aplicación 4\FrmAplicacion4.resx">
       <DependentUpon>FrmAplicacion4.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +103,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Documentación\Documento de política de estilos.docx" />
+    <None Include="Documentación\Documento de pruebas.docx" />
+    <None Include="Documentación\Proyecto_documentación_Navaja_Suiza.chm" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

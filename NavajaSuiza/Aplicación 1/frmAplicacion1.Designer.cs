@@ -28,59 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.botonAppPrimos = new System.Windows.Forms.Button();
+            this.textIntroducNumApp1 = new System.Windows.Forms.TextBox();
+            this.etiqIntroducNumApp1 = new System.Windows.Forms.Label();
+            this.etiqDescApp1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // botonAppPrimos
             // 
-            this.button1.Location = new System.Drawing.Point(146, 249);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "¿Es primo?";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.botonAppPrimos.Location = new System.Drawing.Point(146, 249);
+            this.botonAppPrimos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.botonAppPrimos.Name = "botonAppPrimos";
+            this.botonAppPrimos.Size = new System.Drawing.Size(112, 35);
+            this.botonAppPrimos.TabIndex = 0;
+            this.botonAppPrimos.Text = "¿Es primo?";
+            this.botonAppPrimos.UseVisualStyleBackColor = true;
+            this.botonAppPrimos.Click += new System.EventHandler(this.botonAppPrimo_Click);
             // 
-            // textBox1
+            // textIntroducNumApp1
             // 
-            this.textBox1.Location = new System.Drawing.Point(216, 149);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 26);
-            this.textBox1.TabIndex = 1;
+            this.textIntroducNumApp1.Location = new System.Drawing.Point(216, 149);
+            this.textIntroducNumApp1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textIntroducNumApp1.MaxLength = 9;
+            this.textIntroducNumApp1.Name = "textIntroducNumApp1";
+            this.textIntroducNumApp1.Size = new System.Drawing.Size(148, 26);
+            this.textIntroducNumApp1.TabIndex = 1;
             // 
-            // label1
+            // etiqIntroducNumApp1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 152);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Introduzca un número:";
+            this.etiqIntroducNumApp1.AutoSize = true;
+            this.etiqIntroducNumApp1.Location = new System.Drawing.Point(39, 152);
+            this.etiqIntroducNumApp1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.etiqIntroducNumApp1.Name = "etiqIntroducNumApp1";
+            this.etiqIntroducNumApp1.Size = new System.Drawing.Size(169, 20);
+            this.etiqIntroducNumApp1.TabIndex = 2;
+            this.etiqIntroducNumApp1.Text = "Introduzca un número:";
             // 
-            // label2
+            // etiqDescApp1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(336, 40);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Programa que nos indica si un número positivo\r\nintroducido es o no primo. ";
+            this.etiqDescApp1.AutoSize = true;
+            this.etiqDescApp1.Location = new System.Drawing.Point(39, 55);
+            this.etiqDescApp1.Name = "etiqDescApp1";
+            this.etiqDescApp1.Size = new System.Drawing.Size(336, 40);
+            this.etiqDescApp1.TabIndex = 3;
+            this.etiqDescApp1.Text = "Programa que nos indica si un número positivo\r\nintroducido es o no primo. ";
             // 
             // FrmAplicacion1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 402);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.etiqDescApp1);
+            this.Controls.Add(this.etiqIntroducNumApp1);
+            this.Controls.Add(this.textIntroducNumApp1);
+            this.Controls.Add(this.botonAppPrimos);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmAplicacion1";
             this.Text = "Aplicación 1";
@@ -91,10 +92,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button botonAppPrimos;
+        private System.Windows.Forms.TextBox textIntroducNumApp1;
+        private System.Windows.Forms.Label etiqIntroducNumApp1;
+        private System.Windows.Forms.Label etiqDescApp1;
     }
 }
 

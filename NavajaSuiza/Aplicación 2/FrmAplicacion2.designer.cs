@@ -29,57 +29,58 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAplicacion2));
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.botonAppMultiplos = new System.Windows.Forms.Button();
+            this.etiqIntroducNumApp2 = new System.Windows.Forms.Label();
+            this.textIntroducNumApp2 = new System.Windows.Forms.TextBox();
+            this.etiqDescApp2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // botonAppMultiplos
             // 
-            this.button1.Location = new System.Drawing.Point(270, 317);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 51);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Calcular";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.botonAppMultiplos.Location = new System.Drawing.Point(270, 317);
+            this.botonAppMultiplos.Name = "botonAppMultiplos";
+            this.botonAppMultiplos.Size = new System.Drawing.Size(120, 51);
+            this.botonAppMultiplos.TabIndex = 0;
+            this.botonAppMultiplos.Text = "Calcular";
+            this.botonAppMultiplos.UseVisualStyleBackColor = true;
+            this.botonAppMultiplos.Click += new System.EventHandler(this.botonAppMultiplos_Click);
             // 
-            // label1
+            // etiqIntroducNumApp2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(140, 221);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Introduzca un número:";
+            this.etiqIntroducNumApp2.AutoSize = true;
+            this.etiqIntroducNumApp2.Location = new System.Drawing.Point(140, 221);
+            this.etiqIntroducNumApp2.Name = "etiqIntroducNumApp2";
+            this.etiqIntroducNumApp2.Size = new System.Drawing.Size(169, 20);
+            this.etiqIntroducNumApp2.TabIndex = 1;
+            this.etiqIntroducNumApp2.Text = "Introduzca un número:";
             // 
-            // textBox1
+            // textIntroducNumApp2
             // 
-            this.textBox1.Location = new System.Drawing.Point(358, 218);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 2;
+            this.textIntroducNumApp2.Location = new System.Drawing.Point(358, 218);
+            this.textIntroducNumApp2.MaxLength = 9;
+            this.textIntroducNumApp2.Name = "textIntroducNumApp2";
+            this.textIntroducNumApp2.Size = new System.Drawing.Size(172, 26);
+            this.textIntroducNumApp2.TabIndex = 2;
             // 
-            // label2
+            // etiqDescApp2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(671, 60);
-            this.label2.TabIndex = 3;
-            this.label2.Text = resources.GetString("label2.Text");
+            this.etiqDescApp2.AutoSize = true;
+            this.etiqDescApp2.Location = new System.Drawing.Point(30, 90);
+            this.etiqDescApp2.Name = "etiqDescApp2";
+            this.etiqDescApp2.Size = new System.Drawing.Size(671, 60);
+            this.etiqDescApp2.TabIndex = 3;
+            this.etiqDescApp2.Text = resources.GetString("etiqDescApp2.Text");
             // 
-            // frmAplicacion2
+            // FrmAplicacion2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 544);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Name = "frmAplicacion2";
+            this.Controls.Add(this.etiqDescApp2);
+            this.Controls.Add(this.textIntroducNumApp2);
+            this.Controls.Add(this.etiqIntroducNumApp2);
+            this.Controls.Add(this.botonAppMultiplos);
+            this.Name = "FrmAplicacion2";
             this.Text = "Aplicación 2";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -88,10 +89,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button botonAppMultiplos;
+        private System.Windows.Forms.Label etiqIntroducNumApp2;
+        private System.Windows.Forms.TextBox textIntroducNumApp2;
+        private System.Windows.Forms.Label etiqDescApp2;
     }
 }
 
