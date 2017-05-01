@@ -28,29 +28,6 @@ namespace NavajaSuiza.Aplicación_1
         }
 
         /// <summary>
-        /// Función que verifica si un número positivo introducido es o no es primo.
-        /// </summary>
-        /// <remarks>----</remarks>
-        /// <param name="numIntroducido">Número que introduce el usuario.</param>
-        /// <returns>Si es primo o no.</returns>
-        public bool EsPrimo(int numIntroducido)
-        {
-            bool esPrimo = true;
-
-            if (numIntroducido > 0)
-            {
-                for (int i = 2; i < numIntroducido && esPrimo; i++)
-                {
-                    if (numIntroducido % i == 0)
-                    {
-                        esPrimo = false;
-                    }
-                }
-            }
-            return esPrimo;
-        }
-
-        /// <summary>
         /// Manejador de evento que permite introducir un número entero positivo e 
         /// indicar si es primo o no.
         /// </summary>
@@ -58,29 +35,8 @@ namespace NavajaSuiza.Aplicación_1
         /// <param name="e">Sin uso.</param>
         public void botonAppPrimo_Click(object sender, EventArgs e)
         {
-            bool elementoValido = true;
-            bool esPrimo;
-            int numeroIntroducido;
-
-            elementoValido = int.TryParse(textIntroducNumApp1.Text, out numeroIntroducido);
-
-            if (elementoValido)
-            {
-                esPrimo = EsPrimo(numeroIntroducido);
-
-                if (esPrimo)
-                {
-                    MessageBox.Show("El número es primo.");
-                }
-                else
-                {
-                    MessageBox.Show("El número no es primo.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Introduzca un elemento válido.");
-            }
+            string mensaje = Logica.LogicaApp1.ComprobarNumero(textIntroducNumApp1.Text);
+            MessageBox.Show(mensaje);
         }
     }
 }

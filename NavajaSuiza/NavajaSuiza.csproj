@@ -53,24 +53,28 @@
     <Compile Include="Aplicación 1\FrmAplicacion1.designer.cs">
       <DependentUpon>FrmAplicacion1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Aplicación 1\Logica\LogicaApp1.cs" />
     <Compile Include="Aplicación 2\FrmAplicacion2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Aplicación 2\FrmAplicacion2.designer.cs">
       <DependentUpon>FrmAplicacion2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Aplicación 2\Logica\LogicaApp2.cs" />
     <Compile Include="Aplicación 3\FrmAplicacion3.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Aplicación 3\FrmAplicacion3.designer.cs">
       <DependentUpon>FrmAplicacion3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Aplicación 3\Logica\LogicaApp3.cs" />
     <Compile Include="Aplicación 4\FrmAplicacion4.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Aplicación 4\FrmAplicacion4.designer.cs">
       <DependentUpon>FrmAplicacion4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Aplicación 4\Logica\LogicaApp4.cs" />
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +83,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\ArgumentoNoValidoException.cs" />
     <EmbeddedResource Include="Aplicación 1\FrmAplicacion1.resx">
       <DependentUpon>FrmAplicacion1.cs</DependentUpon>
     </EmbeddedResource>
