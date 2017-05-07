@@ -12,14 +12,22 @@ namespace NavajaSuiza.Aplicación_2.Logica
     /// <summary>
     /// Clase con la lógica de negocio de la aplicación 2.
     /// </summary>
-    class LogicaApp2
+    public class LogicaApp2
     {
+        /// <summary>
+        /// Cadena constante para la excepción ArgumentOutOfRangeException.
+        /// </summary>
+        public const string numeroFueraDeRango = "Introduzca un número entre 1 y 100.";
+        /// <summary>
+        /// Cadena constante para la excepción ArgumentoNoValidoException.
+        /// </summary>
+        public const string elementoNoValido = "Introduzca un elemento válido.";
+
         /// <summary>
         /// Función que verifica si un número está comprendido entre el 1 y el 100.
         /// de ser así, se considera válido.
         /// </summary>
-        /// <remarks>Si el número no es válido, saltará un mensaje para que
-        /// se introduzca otro número.</remarks>
+        /// <remarks>---</remarks>
         /// <param name="numeroIntroducido">Número que introduce el usuario.</param>
         /// <returns>Si es válido o no.</returns>
         public static bool ValidarNumero(int numeroIntroducido)
@@ -37,18 +45,29 @@ namespace NavajaSuiza.Aplicación_2.Logica
         /// Función que devuelve la cadena de números múltiplos de 3 y 5 
         /// comprendidos hasta el número que introduzca el usuario.
         /// </summary>
-        /// <remarks>----</remarks>
+        /// <remarks>Si introduzco un número no válido, me lanza una 
+        /// excepción para que introduzca un número entre el 1 y el 100.</remarks>
         /// <param name="numeroIntroducido">Número que introduce el usuario.</param>
         /// <returns>Cadena con los múltiplos de 3 y 5.</returns>
         public static string MostrarSerieMultiplos(int numeroIntroducido)
         {
             string cadenaTexto = "";
+            bool numeroValido = true;
 
-            for (int i = 1; i <= numeroIntroducido; i++)
+            numeroValido = ValidarNumero(numeroIntroducido);
+
+            if (numeroValido == false)
             {
-                if (i % 3 == 0 || i % 5 == 0)
+                throw new ArgumentOutOfRangeException(numeroFueraDeRango);
+            }
+            else
+            {
+                for (int i = 1; i <= numeroIntroducido; i++)
                 {
-                    cadenaTexto = cadenaTexto + i + ", ";
+                    if (i % 3 == 0 || i % 5 == 0)
+                    {
+                        cadenaTexto = cadenaTexto + i + ", ";
+                    }
                 }
             }
             return cadenaTexto;
@@ -58,37 +77,28 @@ namespace NavajaSuiza.Aplicación_2.Logica
         /// Función que comprueba si un elemento introducido es válido o no 
         /// y devuelve un mensaje con el resultado. 
         /// </summary>
-        /// <remarks>Si es válido y está en el intérvalo devuelve la cadena de múltiplos
-        /// si es válido pero está fuera del intérvalo indicará que se introduzca
-        /// otro número y si no es válido indica que se introduzca un elemento válido.</remarks>
-        /// <param name="numero">Cadena introducida en el textbox.</param>
+        /// <remarks>Si es válido y está en el intérvalo devuelve la cadena de múltiplos.
+        /// Si es válido pero está fuera del intérvalo se lanzará una excepción que
+        /// indicará que se introduzca otro número y si no es válido se lanzará la excepción 
+        /// indicando que se introduzca un elemento válido.</remarks>
+        /// <param name="numero">Elemento introducido en el textbox.</param>
         /// <returns>El mensaje de resultado.</returns>
         public static string ComprobarNumero(string numero)
         {
-            bool numeroValido = true;
             int numeroIntroducido;
-            string mensaje;
+            string cadenaTexto;
 
             bool elementoValido = int.TryParse(numero, out numeroIntroducido);
 
             if (elementoValido)
             {
-                numeroValido = ValidarNumero(numeroIntroducido);
-
-                if (numeroValido == false)
-                {
-                    mensaje = "Introduzca un número entre 1 y 100.";
-                }
-                else
-                {
-                    mensaje = MostrarSerieMultiplos(numeroIntroducido);
-                }
+                cadenaTexto = MostrarSerieMultiplos(numeroIntroducido);
             }
             else
             {
-                mensaje = "Introduzca un elemento válido.";
+                throw new Excepciones.ArgumentoNoValidoException(elementoNoValido);
             }
-            return mensaje;
+            return cadenaTexto;
         }
     }
 }

@@ -29,14 +29,22 @@ namespace NavajaSuiza.Aplicación_1
 
         /// <summary>
         /// Manejador de evento que permite introducir un número entero positivo e 
-        /// indicar si es primo o no.
+        /// indicar si es primo o no. Si se introduce un elemento no válido se lanza
+        /// una excepción.
         /// </summary>
         /// <param name="sender">Lanza el botón del evento botonAppPrimo.</param>
         /// <param name="e">Sin uso.</param>
         public void botonAppPrimo_Click(object sender, EventArgs e)
         {
-            string mensaje = Logica.LogicaApp1.ComprobarNumero(textIntroducNumApp1.Text);
-            MessageBox.Show(mensaje);
+            try
+            {
+                string mensaje = Logica.LogicaApp1.ComprobarNumero(textIntroducNumApp1.Text);
+                MessageBox.Show(mensaje);
+            }
+            catch (Excepciones.ArgumentoNoValidoException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

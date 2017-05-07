@@ -49,7 +49,7 @@
             // 
             this.textIntroducNumApp1.Location = new System.Drawing.Point(216, 149);
             this.textIntroducNumApp1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textIntroducNumApp1.MaxLength = 9;
+            this.textIntroducNumApp1.MaxLength = 15;
             this.textIntroducNumApp1.Name = "textIntroducNumApp1";
             this.textIntroducNumApp1.Size = new System.Drawing.Size(148, 26);
             this.textIntroducNumApp1.TabIndex = 1;

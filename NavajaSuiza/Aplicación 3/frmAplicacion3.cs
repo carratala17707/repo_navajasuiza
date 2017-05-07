@@ -30,6 +30,7 @@ namespace NavajaSuiza.Aplicación_3
         /// <summary>
         /// Manejador de evento que permite leer un vector, contar el número de valores
         /// repetidos modificados por -1 y mostrarlo con las modificaciones.
+        /// Si se introduce un elemento no válido se lanza una excepción.
         /// </summary>
         /// <param name="sender">Lanza el botón del evento botonAppRepetidos.</param>
         /// <param name="e">Sin uso.</param>
@@ -37,10 +38,20 @@ namespace NavajaSuiza.Aplicación_3
         {
             try
             {
-                string mensaje = Logica.LogicaApp3.ComprobarValoresEntrada(textIntroducNumApp3.Text);
+                int modificaciones = 0;
+                int[] vectorNumeros = Logica.LogicaApp3.ComprobarValoresEntrada(
+                    textIntroducNumApp3.Text, out modificaciones);
+                string mensaje = Logica.LogicaApp3.MostrarVector(vectorNumeros) + 
+                    " el número de valores modificados es: " +
+                    modificaciones;
+
                 MessageBox.Show(mensaje);
             }
-            catch (Util.ArgumentoNoValidoException ex)
+            catch (Excepciones.ArgumentoNoValidoException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (ArgumentException ex)
             {
                 MessageBox.Show(ex.Message);
             }

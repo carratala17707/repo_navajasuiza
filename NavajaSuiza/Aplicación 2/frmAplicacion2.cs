@@ -31,13 +31,25 @@ namespace NavajaSuiza.Aplicación_2
         /// Manejador de evento que permite introducir un número, validarlo para que
         /// esté comprendido entre el 1 y el 100 y si lo está, que devuelva
         /// los múltiplos de 3 y 5 que puedan haber hasta ese número introducido.
+        /// Si se introduce un elemento no válido se lanza una excepción.
         /// </summary>
         /// <param name="sender">Lanza el botón del evento botonAppMultiplos.</param>
         /// <param name="e">Sin uso.</param>
         public void botonAppMultiplos_Click(object sender, EventArgs e)
         {
-            string mensaje = Logica.LogicaApp2.ComprobarNumero(textIntroducNumApp2.Text);
-            MessageBox.Show(mensaje);
+            try
+            {
+                string cadenaTexto = Logica.LogicaApp2.ComprobarNumero(textIntroducNumApp2.Text);
+                MessageBox.Show(cadenaTexto);
+            }
+            catch (Excepciones.ArgumentoNoValidoException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

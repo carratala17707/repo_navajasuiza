@@ -57,7 +57,7 @@
             // textIntroducNumApp2
             // 
             this.textIntroducNumApp2.Location = new System.Drawing.Point(358, 218);
-            this.textIntroducNumApp2.MaxLength = 9;
+            this.textIntroducNumApp2.MaxLength = 15;
             this.textIntroducNumApp2.Name = "textIntroducNumApp2";
             this.textIntroducNumApp2.Size = new System.Drawing.Size(172, 26);
             this.textIntroducNumApp2.TabIndex = 2;

@@ -83,7 +83,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Util\ArgumentoNoValidoException.cs" />
+    <Compile Include="Excepciones\ArgumentoNoValidoException.cs" />
     <EmbeddedResource Include="Aplicación 1\FrmAplicacion1.resx">
       <DependentUpon>FrmAplicacion1.cs</DependentUpon>
     </EmbeddedResource>

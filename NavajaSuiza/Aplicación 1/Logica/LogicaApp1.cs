@@ -15,24 +15,33 @@ namespace NavajaSuiza.Aplicación_1.Logica
     public class LogicaApp1
     {
         /// <summary>
+        /// Cadena constante para la excepción ArgumentoNoValidoException.
+        /// </summary>
+        public const string elementoNoValido = "Introduzca un elemento válido.";
+
+        /// <summary>
         /// Función que verifica si un número positivo introducido es o no es primo.
         /// </summary>
         /// <remarks>----</remarks>
-        /// <param name="numIntroducido">Número que introduce el usuario.</param>
+        /// <param name="numeroIntroducido">Número que introduce el usuario.</param>
         /// <returns>Si es primo o no.</returns>
-        public static bool EsPrimo(int numIntroducido)
+        public static bool EsPrimo(int numeroIntroducido)
         {
             bool esPrimo = true;
 
-            if (numIntroducido > 0)
+            if (numeroIntroducido > 1)
             {
-                for (int i = 2; i < numIntroducido && esPrimo; i++)
+                for (int i = 2; i < numeroIntroducido && esPrimo; i++)
                 {
-                    if (numIntroducido % i == 0)
+                    if (numeroIntroducido % i == 0)
                     {
                         esPrimo = false;
                     }
                 }
+            }
+            else
+            {
+                esPrimo = false;
             }
             return esPrimo;
         }
@@ -42,8 +51,9 @@ namespace NavajaSuiza.Aplicación_1.Logica
         /// y devuelve un mensaje con el resultado. 
         /// </summary>
         /// <remarks>Si es válido devuelve si es primo o no y si no es válido
-        /// indica que se introduzca un elemento válido.</remarks>
-        /// <param name="numero">Cadena introducida en el textbox.</param>
+        /// se lanza una excepción indicando que se introduzca un elemento válido.
+        /// </remarks>
+        /// <param name="numero">Elemento introducido en el textbox.</param>
         /// <returns>El mensaje de resultado.</returns>
         public static string ComprobarNumero(string numero)
         {
@@ -68,7 +78,8 @@ namespace NavajaSuiza.Aplicación_1.Logica
             }
             else
             {
-                mensaje = "Introduzca un elemento válido.";
+                throw new Excepciones.ArgumentoNoValidoException(
+                    elementoNoValido);
             }
             return mensaje;
         }

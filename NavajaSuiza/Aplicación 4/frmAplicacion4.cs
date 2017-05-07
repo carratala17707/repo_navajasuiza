@@ -30,6 +30,7 @@ namespace NavajaSuiza.Aplicación_4
         /// <summary>
         /// Manejador de evento que permite leer un vector (vectorLeido), darle la 
         /// vuelta (vectorAlReves) y mostrarlo.
+        /// Si se introduce un elemento no válido se lanza una excepción.
         /// </summary>
         /// <param name="sender">Lanza el botón del evento botonAppVectorReves.</param>
         /// <param name="e">Sin uso.</param>
@@ -37,10 +38,17 @@ namespace NavajaSuiza.Aplicación_4
         {
             try
             {
-                string mensaje = Logica.LogicaApp4.ComprobarValoresEntrada(textIntroducNumApp4.Text);
+                int[] vectorAlReves = Logica.LogicaApp4.ComprobarValoresEntrada(
+                    textIntroducNumApp4.Text);
+                string mensaje = Logica.LogicaApp4.MostrarVectorReves(vectorAlReves);
+
                 MessageBox.Show(mensaje);
             }
-            catch (Util.ArgumentoNoValidoException ex)
+            catch (Excepciones.ArgumentoNoValidoException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (ArgumentException ex)
             {
                 MessageBox.Show(ex.Message);
             }

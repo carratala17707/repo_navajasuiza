@@ -12,32 +12,38 @@ namespace NavajaSuiza.Aplicación_4.Logica
     /// <summary>
     /// Clase con la lógica de negocio de la aplicación 4.
     /// </summary>
-    class LogicaApp4
+    public class LogicaApp4
     {
         /// <summary>
-        /// Función que permite leer un vector, determinar
-        /// si la cadena de valores introducidos es válida y dar un mensaje
-        /// con el resultado.
+        /// Cadena constante para la excepción ArgumentException.
+        /// </summary>
+        public const string cantidadNumerosNoValida = "Introduzca 10 números separados por comas.";
+        /// <summary>
+        /// Cadena constante para la excepción ArgumentoNoValidoException.
+        /// </summary>
+        public const string elementoNoValido = "Se ha introducido algún elemento no numérico.";
+
+        /// <summary>
+        /// Función que acepta una cadena de valores, determina
+        /// si la cadena de valores introducidos es válida y devuelve la cadena de
+        /// valores al revés.
         /// <remarks>Si no se han introducido 10 números (kTamanyo) se lanza una excepción 
         /// para que se introduzcan los 10 números separados por comas. Si se han
         /// introducido otros valores, se lanza una excepción indicandolo.</remarks>
         /// </summary>
         /// <param name="cadenaValores">Cadena de valores introducida.</param>
-        /// <returns>Mensaje con el resultado.</returns>
-        public static string ComprobarValoresEntrada(string cadenaValores)
+        /// <returns>cadena con el resultado.</returns>
+        public static int[] ComprobarValoresEntrada(string cadenaValores)
         {
             string[] numerosIntroducidos = cadenaValores.Split(',');
             bool elementoValido = true;
-            string mensaje;
-            string cadenaVector;
             const int kTamanyo = 10;
             int[] vectorLeido = new int[kTamanyo];
-            int[] vectorAlReves = new int[kTamanyo];
+            int[] vectorAlReves;
 
             if (numerosIntroducidos.Length != kTamanyo)
             {
-                throw new Util.ArgumentoNoValidoException(
-                    "Introduzca 10 números separados por comas.");
+                throw new ArgumentException(cantidadNumerosNoValida);
             }
             else
             {
@@ -55,17 +61,11 @@ namespace NavajaSuiza.Aplicación_4.Logica
 
                 if (!elementoValido)
                 {
-                    throw new Util.ArgumentoNoValidoException(
-                        "Se ha introducido algún elemento no numérico.");
+                    throw new Excepciones.ArgumentoNoValidoException(elementoNoValido);
                 }
-                else
-                {
-                    InvertirVector(vectorLeido, vectorAlReves);
-                    cadenaVector = MostrarVectorReves(vectorAlReves);
-                    mensaje = "El vector al revés queda: \n" + cadenaVector;
-                }
+                vectorAlReves = InvertirVector(vectorLeido);
             }
-            return mensaje;
+            return vectorAlReves;
         }
 
         /// <summary>
@@ -74,16 +74,17 @@ namespace NavajaSuiza.Aplicación_4.Logica
         /// </summary>
         /// <remarks>----</remarks>
         /// <param name="vectorLeido">Vector leído.</param>
-        /// <param name="vectorAlReves">Vector al revés.</param>
-        public static void InvertirVector(int[] vectorLeido, int[] vectorAlReves)
+        public static int[] InvertirVector(int[] vectorLeido)
         {
             int j = vectorLeido.Length - 1;
+            int[] vectorAlReves = new int[vectorLeido.Length];
 
             for (int i = 0; i < vectorLeido.Length; i++)
             {
                 vectorAlReves[j] = vectorLeido[i];
                 j--;
             }
+            return vectorAlReves;
         }
 
         /// <summary>
@@ -99,7 +100,7 @@ namespace NavajaSuiza.Aplicación_4.Logica
 
             for (int i = 0; i < vectorAlReves.Length; i++)
             {
-                cadenaVector = cadenaVector + vectorAlReves[i] + ", ";
+                cadenaVector = cadenaVector + vectorAlReves[i] + ",";
             }
             return cadenaVector;
         }
