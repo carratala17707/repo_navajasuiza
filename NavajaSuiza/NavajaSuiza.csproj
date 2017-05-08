@@ -108,8 +108,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Documentación\Documento de política de estilos.docx" />
-    <None Include="Documentación\Documento de pruebas.docx" />
+    <None Include="Documentación\Documento de política de estilos.pdf" />
+    <None Include="Documentación\Documento de pruebas unitarias.pdf" />
+    <None Include="Documentación\Documento de pruebas.pdf" />
     <None Include="Documentación\Proyecto_documentación_Navaja_Suiza.chm" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -37,7 +37,7 @@ namespace TestApp3
         /// modificados (número de valores que se han repetido).
         /// </summary>
         [TestMethod]
-        public void NumValoresRepetidosCorrecto()
+        public void NumValoresModificadosCorrecto()
         {
             string cadenaValores = "1,2,4,4,5,6,7,1,9,7";
             int valoresModificadosEsperados = 3;

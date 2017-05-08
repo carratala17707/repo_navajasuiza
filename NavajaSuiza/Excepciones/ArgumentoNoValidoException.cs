@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 /// <summary>
-/// Namespace de la excepción creada. 
+/// Namespace de la excepción ArgumentoNoValidoException. 
 /// </summary>
 namespace NavajaSuiza.Excepciones
 {
