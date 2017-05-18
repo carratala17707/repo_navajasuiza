@@ -2,14 +2,10 @@
 using NavajaSuiza;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-/// <summary>
-/// Namespace del proyecto de pruebas de la Aplicación 4.
-/// </summary>
+
 namespace TestApp4
 {
-    /// <summary>
-    /// Clase de pruebas App4Test.
-    /// </summary>
+    
     [TestClass]
     public class App4Test
     {
